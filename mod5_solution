@@ -1,0 +1,20 @@
+// Define an array of category short names
+var categoryShortNames = ["L", "D", "S"];
+
+// Function to generate a random integer
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+// Function to get a random category short name
+function getRandomCategoryShortName() {
+  var index = getRandomInt(categoryShortNames.length);
+  return categoryShortNames[index];
+}
+
+// Update the onclick event for the Specials tile
+var specialsTile = document.querySelector("#specials-tile");
+specialsTile.onclick = function() {
+  var randomCategoryShortName = getRandomCategoryShortName();
+  $dc.loadMenuItems(randomCategoryShortName);
+};
